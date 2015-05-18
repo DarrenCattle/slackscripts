@@ -23,9 +23,9 @@ function kush() {
 	var hour = d.getHours();
 	var minute = d.getMinutes();
 	var seconds = d.getSeconds();
-	var hh = 3;
-	var mm = 34;
-	var ss = 60;
+	var hh = 4;
+	var mm = 20;
+	var ss = 5;
 	var four = minute==mm && (hour==hh || hour==16) && seconds <= ss && !done;
 	console.log(hour, minute, seconds, four);
 	if(four)
@@ -41,7 +41,7 @@ function kush() {
 }
 
 function kushcommands() {
-	var commands = ["pay me", "ridbot echo pay me", "ridbot echo molly pay d 1"];
+	var commands = ["ridbot echo pay me", "ridbot echo molly pay d 1", "pay me"];
 	if(a>=commands.length) {
 		a=0;
 		console.log("done");
