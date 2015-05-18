@@ -1,0 +1,67 @@
+var jq = document.createElement('script');
+jq.src = "//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js";
+
+var msgbox = $('#message-input')[0];
+var delay = 4000;
+for(var a = 0; a < 1000; a++) {
+    setTimeout(
+        (function(a) {
+            return function() {
+				msgbox.value = a%2 == 0 ? "rid++" : "matty++";
+				$('#message-form').submit();
+				//console.log(delay);
+            }
+        })(a), delay);
+        delay += 4000;
+    }
+
+
+var jq = document.createElement('script');
+jq.src = "//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js";
+var msgbox = $('#message-input')[0];
+
+function kush() {
+	msgbox.value = "pay me";
+	$('#message-form').submit();
+	setTimeout(kush,1000);
+}
+kush();
+
+var jq = document.createElement('script');
+jq.src = "//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js";
+
+function kush() {
+	var msgbox = $('#message-input')[0];
+	var d = new Date();
+	var hour = d.getHours();
+	var minute = d.getMinutes();
+	var four = minute==20 && (hour==4 || hour==16);
+	console.log(hour, minute, four);
+	if(four)
+	{
+		console.log(minute, hour);
+		msgbox.value = "pay me";
+		$('#message-form').submit();
+		setTimeout(kush,60000);
+	}
+	setTimeout(kush,30000);
+}
+kush();
+
+var jq = document.createElement('script');
+jq.src = "//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js";
+var a = 0;
+
+function kush() {
+	var msgbox = $('#message-input')[0];
+	var commands = ["pay me", "ridbot echo pay me", "ridbot echo molly pay d 1"];
+	if(a>commands.length)
+		console.log("done");
+	else {
+		msgbox.value = commands[a];
+		$('#message-form').submit();
+		a++;
+		setTimeout(kush,1000);
+	}
+}
+kush();
