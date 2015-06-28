@@ -16,7 +16,6 @@ var jq = document.createElement('script');
 jq.src = "//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js";
 var a = 0;
 var msgbox = $('#message-input')[0];
-var done = false;
 
 function kush() {
 	var d = new Date();
@@ -25,12 +24,11 @@ function kush() {
 	var seconds = d.getSeconds();
 	var hh = 4;
 	var mm = 20;
-	var ss = 5;
-	var four = minute==mm && (hour==hh || hour==16) && seconds <= ss && !done;
+	var ss = 60;
+	var four = minute==mm && (hour==hh || hour==16) && seconds <= ss;
 	console.log(hour, minute, seconds, four);
 	if(four)
 	{
-		done = true;
 		kushcommands();
 		setTimeout(kush,40000000); //4,310,000,000 would be more ideal
 	}
@@ -41,7 +39,7 @@ function kush() {
 }
 
 function kushcommands() {
-	var commands = ["ridbot echo pay me", "ridbot echo molly pay d 1", "pay me"];
+	var commands = ["viper echo pay me", "yall bustas about to like this", "molly pay viper 1 quantum 0.5"];
 	if(a>=commands.length) {
 		a=0;
 		console.log("done");
